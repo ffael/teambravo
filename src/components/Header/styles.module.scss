@@ -1,0 +1,110 @@
+.header{
+    margin-bottom: 2rem;
+    padding: 10px 0;
+    position: relative;
+    min-height: 80vh;
+
+    .header-content{
+        position: relative;
+        z-index: 1;
+    }
+    // .header-info{
+    //     // position: relative;
+    //     // background: #BD292A;
+    //     // border-top: 1px solid #F9FAFC;
+    //     // border-bottom: 1px solid #F9FAFC;
+    // }
+    .request-btn{
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #fafafa;
+        font-size: 0.666rem;
+        border-radius: 20px;
+        padding: 10px 20px;
+        border: 1px solid #fafafa;
+        transition: all 0.3s ease-in;
+
+        &:hover{
+            background: #fafafa;
+            color: #333;
+            transition: all 0.3s ease-in;
+        }
+    }
+
+    .hero{
+        width: 100vw;
+        height: 80vh;
+        position: absolute;
+        top:0;
+        background: url('../../assets/img/background.png') 0 0 no-repeat;
+        background-size: 100% 100%;
+        z-index: 0;
+        margin-bottom: 20px;
+
+        .content{
+            text-align: center;
+            color: #fafafa;
+        }
+    }
+    
+    section{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        h1, img{
+            margin: 0;
+        }
+    
+        .main-nav{
+            ul{
+                display: flex;
+                flex-direction: column;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                
+                li{
+                    margin: 0 20px;
+                }
+                
+                a{
+                    text-transform: uppercase;
+                    font-size: 0.777rem;
+                    text-decoration: none;
+                    color: #fafafa;
+                }
+            }
+        }
+    }
+   
+}
+
+.active-nav{
+    color: #333;
+    font-weight: bold;
+}
+
+// Small devices (sm)
+@media (min-width: 576px) {
+}
+
+// Medium devices (md)
+@media (max-width: 768px) {
+    
+}
+
+// Large devices (lg)
+@media (min-width: 991px) {
+    .header{    
+        section{
+            .main-nav{
+                ul{
+                    flex-direction: row;
+                }
+            }
+        }
+        
+    }
+}
+
