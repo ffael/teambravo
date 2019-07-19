@@ -1,8 +1,11 @@
 import React from 'react'
 import Layout from '../components/Layouts/layout'
+import Head from '../components/Layouts/head'
+
 import { Link, graphql, useStaticQuery } from 'gatsby'
 
 const ServicesPage = () =>{
+    
     const data = useStaticQuery(graphql`
     query {
         allContentfulService(sort: {order: DESC, fields: createdAt}) {
@@ -26,6 +29,7 @@ const ServicesPage = () =>{
 
     return(
         <Layout>
+            <Head title="Services"/>
             <section className="content">
                 <h1>Services</h1>
                 <ul>
