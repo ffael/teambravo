@@ -4,22 +4,24 @@ import { Link, graphql, useStaticQuery } from 'gatsby'
 
 const ServicesPage = () =>{
     const data = useStaticQuery(graphql`
-        query{
-            allMarkdownRemark{
-                edges{
-                    node{
-                        frontmatter{
-                            title
-                            excerpt
-                            type
-                        }
-                        fields{
-                            slug
-                        }
+    query {
+        allContentfulService(sort: {order: DESC, fields: createdAt}) {
+          edges {
+            node {
+                id
+                title
+                slug
+                briefDescription
+                icon{
+                    file{
+                        url
                     }
+                    title
                 }
             }
+          }
         }
+      }
     `)
 
     return(
@@ -27,15 +29,14 @@ const ServicesPage = () =>{
             <section className="content">
                 <h1>Services</h1>
                 <ul>
-                    {data.allMarkdownRemark.edges.map((edge)=>{
-                        if(edge.node.frontmatter.type === 'service'){
-                            return(
-                                <li>
-                                    <Link to={`services/${edge.node.fields.slug}`}>{edge.node.frontmatter.title}</Link>
-                                    <p>{edge.node.frontmatter.excerpt}</p>
-                                </li>
-                            )
-                        }
+                    {data.allContentfulService.edges.map((edge)=>{
+                        return(
+                            <li key={edge.node.id}>
+                                <img width="30px" height="30px" src={edge.node.icon.file.url} alt={edge.node.icon.title}/>
+                                <Link to={`services/${edge.node.slug}`}>{edge.node.title}</Link>
+                                <p>{edge.node.briefDescription}</p>
+                            </li>
+                        )
                     })}
                 </ul>
             </section>

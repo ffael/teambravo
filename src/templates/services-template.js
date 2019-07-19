@@ -4,28 +4,25 @@ import { graphql } from 'gatsby'
 
 
 export const query = graphql`
-    query( $slug: String! ){
-        markdownRemark(
-            fields:{
-                slug:{
-                    eq: $slug
-                }
+    query ($slug: String) {
+        contentfulService(slug: {eq: $slug}) {
+        briefDescription
+        icon {
+            file {
+            url
             }
-        ){
-            frontmatter{
-                title
-            }
-            html
-            htmlAst
+        }
+        title
         }
     }
+  
 `
 
 const ServicesTemplate = (props) => {
     return(
        <Layout>
             <section className="content">
-                <div className="content" dangerouslySetInnerHTML={{__html: props.data.markdownRemark.html}}>
+                <div className="content" dangerouslySetInnerHTML={{__html: props.data.contentfulService.title}}>
                 </div>
             </section>
        </Layout>
