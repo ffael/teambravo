@@ -21,7 +21,7 @@ const Header = () =>{
         <div className={HeaderStyles.headerWrapper}>
             <header className={HeaderStyles.header}>
                 <section className={`${HeaderStyles.headerContent} content`}>
-                    <h1><img src={Logo} alt={data.site.siteMetadata.title}></img></h1>
+                    <h1><Link to='/'><img src={Logo} alt={data.site.siteMetadata.title}></img></Link></h1>
                     <nav className={HeaderStyles.mainNav}>
                         <ul>
                             <li><Link to="/" activeClassName={HeaderStyles.activeNav}>Home</Link></li>
