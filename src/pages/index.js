@@ -5,8 +5,8 @@ import Head from "../components/Layouts/head"
 const IndexPage = () => {
   return (
     <Layout>
-      <Head title="Home" />
-      <section className="content">
+      <Head title="Home"/>
+      <section>
 
       </section>
     </Layout>

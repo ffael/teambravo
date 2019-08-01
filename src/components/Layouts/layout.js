@@ -1,18 +1,36 @@
-import React from 'react'
-import Header from '../Header/header.js'
-import LayoutStyles from './styles.module.scss'
-
-import '../../styles/index.scss'
-import '../../styles/main.scss'
+import React, {useState} from 'react'
+import Header from '../Header/header'
+import Drawer from '../Drawer/drawer'
+import GlobalStyles from '../../styles/global'
+import DrawerContext from '../Drawer/context'
+import { ThemeProvider } from 'styled-components'
 
 const Layout = ({children}) => {
+    const [drawer, setDrawer] = useState({})
+    const [hidden, setHidden] = useState({})
+
+    const theme = {
+        ui: {
+            primary: "#570A0A",
+            background: "#F9FAFC" 
+        },
+        fonts:{
+            heading: "#323852",
+            text: "#ABAEBE"
+        }
+    }
+
     return(
-        <div className={LayoutStyles.wrapper}>
-            <Header />
-            <main className={LayoutStyles.content}>
-                {children}
-            </main>
-        </div>
+        <ThemeProvider theme={theme}>
+            <DrawerContext.Provider value={{drawer, hidden, setDrawer, setHidden}}>
+                <GlobalStyles />
+                <Drawer />
+                <Header />
+                <main>
+                    {children}
+                </main>
+            </DrawerContext.Provider>
+        </ThemeProvider>
     )
 }
 
