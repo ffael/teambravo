@@ -21,6 +21,7 @@ const Layout = ({children}) => {
     }
 
     return(
+        
         <ThemeProvider theme={theme}>
             <DrawerContext.Provider value={{drawer, hidden, setDrawer, setHidden}}>
                 <GlobalStyles />
@@ -31,6 +32,7 @@ const Layout = ({children}) => {
                 </main>
             </DrawerContext.Provider>
         </ThemeProvider>
+        
     )
 }
 

@@ -1,13 +1,24 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import Logo from '../../assets/img/logo.svg'
 import DrawerContext from '../Drawer/context'
 
-import { Container , ToggleButton} from './styles.js'
-import { MdReorder } from 'react-icons/md'
+import { Container , ToggleButton, RequestButton} from './styles.js'
+import { MdMenu } from 'react-icons/md'
 
 export default function Header(){
+    const [onTop, setOnTop] = useState(true);
     const {drawer, hidden, setDrawer, setHidden} = useContext(DrawerContext)
+
+    useEffect(()=>{
+        document.addEventListener('scroll', ()=>{
+            const top = window.scrollY < 600;
+            if(top !== onTop){
+                setOnTop(top)
+            }
+        })
+    },[onTop])
+
     const data = useStaticQuery(graphql`
         query{
             site{
@@ -19,17 +30,22 @@ export default function Header(){
     `)
 
     return(
-        <Container className="grid">
+        <Container className={"grid " + (onTop ? 'mainNavTop':'mainNavSticky')}>
                 <nav>
-                    <h1><a href='#'><img src={Logo} alt={data.site.siteMetadata.title}></img></a></h1>
+                    <h1><a href='index.html'><img src={Logo} alt={data.site.siteMetadata.title}></img></a></h1>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html">Services</a></li>
+                        <li><a href="index.html">About</a></li>
+                        <li><a href="index.html">Contact</a></li>
                     </ul>
+
+                    <RequestButton href="index.html">
+                        Request Estimate
+                    </RequestButton>
+
                     <ToggleButton onClick={()=> {setDrawer(!drawer); setHidden(!hidden)}}>
-                        <MdReorder />
+                        <MdMenu />
                     </ToggleButton>
                 </nav>
         </Container>

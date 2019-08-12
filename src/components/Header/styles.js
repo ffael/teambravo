@@ -3,19 +3,19 @@ import styled from 'styled-components'
 export const Container = styled.header`
   background: ${props => props.theme.ui.primary};
   height: 80px;
-  box-sizing: content-box;
+  box-sizing: border-box;
   display: flex;
   padding-top:10px;
   padding-bottom:10px;
-
-  justify-content:space-between;
-  align-items: center;
+  position: sticky;
+  top:0;
+  z-index: 9;
 
   nav{
-    line-height:80px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.777rem;
     display: flex;
-    max-height: 100%;
-    justify-content: space-between;
     width: 100%;
     
     a{
@@ -27,28 +27,33 @@ export const Container = styled.header`
 
     h1{
       margin-bottom: 0;
-      margin-right: 10px;
+
+      img{
+        height: 100%;
+      }
     }
 
     ul{
-      margin-bottom: 0;
+      margin:0 auto;
+      max-width: 460px;
       display: flex;
-      justify-content: space-between;
-      width: 600px;
+      li{
+        margin:0 10px;
+        line-height:60px;
+        a{
+          padding: 0 20px;
+          display: inline-block;
+        }
+      }
     }
   }
 
-  @media (max-width:376px){
-    height: 60px;
+  @media (max-width:1090px){
+    height: 80px;
     padding-top:5px;
     padding-bottom:5px;
-
     nav{
-      line-height:60px;
-      display: flex;
-      max-height: 100%;
       justify-content: space-between;
-      width: 100%;
       h1{
         margin-right:0;
         a{
@@ -57,7 +62,7 @@ export const Container = styled.header`
           height: 100%;
         }
         img{
-          height: 90%;
+          height: 75%;
           margin-bottom: 0;
         }
       }
@@ -78,7 +83,22 @@ export const ToggleButton = styled.button`
   align-items: center;
   padding: 0;
 
-  @media (min-width: 376px){
+  @media (min-width: 1090px){
     display: none;
+  }
+`
+export const RequestButton = styled.a`
+  display: flex;
+  padding: 10px 20px;
+  align-self: center;
+  align-items: center;
+  border: 1px solid #fff;
+  height: 50px;
+  border-radius: 10px;
+  background: transparent;
+  transition: all 0.3s ease;
+
+  @media(max-width:1090px){
+    display:none;
   }
 `

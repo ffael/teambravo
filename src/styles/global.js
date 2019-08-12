@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from "styled-components"
 
 export default createGlobalStyle`
     /* Reset provided by https://github.com/gatsbyjs/gatsby-starter-blog via MIT license */
@@ -9,19 +9,51 @@ export default createGlobalStyle`
         padding-left: calc(5% + 1rem);
         padding-right: calc(5% + 1rem);
     }
+    .section {
+        padding-top: 1.875rem;
+        padding-bottom: 1.875rem;
+    }
+    .section-xl{
+        padding-top: 4.875rem;
+        padding-bottom: 4.875rem;
+    }
+
+    .mainNavTop{
+        transition: all 0.3s ease;
+    }
+    .mainNavSticky{
+        transition: all 0.3s ease-out;
+        background: ${props => props.theme.fonts.heading};
+        box-shadow: 0 0 5px 0px rgba(0,0,0,0.2);
+
+        
+        ul{
+            a:hover{
+                color: ${props => props.theme.fonts.text} !important;
+            }
+        }
+        nav > a:hover{
+            color: ${props => props.theme.fonts.text} !important;
+            border-color: ${props => props.theme.fonts.text} !important;
+            transition: all 0.3s ease;
+        }
+
+
+    }
 
     *{
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Roboto', sans-serif !important;
     }
     html {
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     }
     body {
-        margin: 0;
-        background: ${ props => props.theme.ui.background } !important;
+        margin: 0 auto !important;
+        background: ${props => props.theme.ui.background} !important;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        max-width: 1600px;
     }
     article,
     aside,
