@@ -14,6 +14,7 @@ export const Box = styled.div`
   border: 1px solid #ddd;
   width: 100%;
   padding-top: calc(5% + 1rem);
+  padding-bottom: calc(5% + 1rem);
   align-items: center;
 `
 
@@ -34,7 +35,7 @@ export const Title = styled.header`
 
 export const TestimonialContainer = styled.section`
   display: flex;
-  width: 80%;
+  width: 100%;
   background: ${props => props.theme.ui.background};
   color:${props => props.theme.fonts.heading};
   padding: calc(3% + 1rem);
@@ -42,8 +43,6 @@ export const TestimonialContainer = styled.section`
   justify-content: space-between;
   border:1px solid #eee;
   box-shadow: 0 0 10px 0 rgba(0,0,0,0.05);
-  position: relative;
-  top: 30px;
   
   div{
     width:70%;
