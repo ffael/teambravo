@@ -16,7 +16,7 @@ export default function Testimonials(){
       <Box className="grid">
         <Title>
           <h3>That's Why Our Clients Approve Our Work!</h3>
-          <p>After years of providing excelent service, this is what some of our clients have to say: </p>
+          <p>After years providing excelent service, this is what some of our clients have to say: </p>
         </Title>
 
         <TestimonialContainer>

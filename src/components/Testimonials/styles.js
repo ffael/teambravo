@@ -13,7 +13,6 @@ export const Box = styled.div`
   background: #fff;
   border: 1px solid #ddd;
   width: 100%;
-  height: 400px;
   padding-top: calc(5% + 1rem);
   align-items: center;
 `
@@ -36,14 +35,15 @@ export const Title = styled.header`
 export const TestimonialContainer = styled.section`
   display: flex;
   width: 80%;
-  flex-direction: row;
   background: ${props => props.theme.ui.background};
   color:${props => props.theme.fonts.heading};
-  padding: calc(5% + 1rem);
+  padding: calc(3% + 1rem);
   align-items: center;
   justify-content: space-between;
   border:1px solid #eee;
   box-shadow: 0 0 10px 0 rgba(0,0,0,0.05);
+  position: relative;
+  top: 30px;
   
   div{
     width:70%;
@@ -53,7 +53,8 @@ export const TestimonialContainer = styled.section`
       font-style: italic;
       margin-top: 20px;
       margin-left: 20px;
-      font-size: 1.555rem;
+      font-size: 1.333rem;
+      color: inherit;
     }
     strong{
       font-size: 1.111rem;
@@ -61,9 +62,6 @@ export const TestimonialContainer = styled.section`
     }
   }
   figure{
-    display: flex;
-    align-items: center;
-    justify-content: center;
     img{
       margin-bottom: 0;
     }
