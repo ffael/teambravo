@@ -5,6 +5,11 @@ export const Container = styled.section`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width:1090px){
+    padding-left: 0;
+    padding-right: 0;
+  }
 `
 
 export const Box = styled.div`
@@ -16,6 +21,7 @@ export const Box = styled.div`
   padding-top: calc(5% + 1rem);
   padding-bottom: calc(5% + 1rem);
   align-items: center;
+  
 `
 
 export const Title = styled.header`
@@ -34,6 +40,17 @@ export const Title = styled.header`
 `
 
 export const TestimonialContainer = styled.section`
+  .truncate{
+    display: block;
+    border-left: 5px solid ${props => props.theme.fonts.heading};
+    padding-left: 20px;
+    font-style: italic;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    font-size: 1.333rem;
+    color: inherit;
+  }
   display: flex;
   width: 100%;
   background: ${props => props.theme.ui.background};
@@ -63,6 +80,15 @@ export const TestimonialContainer = styled.section`
   figure{
     img{
       margin-bottom: 0;
+    }
+  }
+  @media (max-width:1090px){
+    flex-direction: column;
+    flex-flow: column-reverse;
+    width: 100%;
+    
+    div{
+      width: 100%;
     }
   }
 `

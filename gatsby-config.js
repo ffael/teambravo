@@ -3,7 +3,7 @@
  *
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
-
+const path = require('path')
 module.exports = {
   /* Your site config here */
   siteMetadata: {
@@ -16,6 +16,13 @@ module.exports = {
   plugins: [
     'gatsby-plugin-sass',
     'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
+    {
+      resolve: 'gatsby-plugin-styled-components',
+      options:{
+        displayName: true
+      }
+    },
   ]
 }

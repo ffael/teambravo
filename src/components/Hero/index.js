@@ -1,12 +1,14 @@
 import React from 'react'
-import {Hero, InfoBar} from './styles.js'
+// Styled Components
+import { Hero, InfoBar} from './styles'
+
 import {
   FaTwitterSquare, 
   FaFacebookSquare, 
   FaInstagram,
 } from 'react-icons/fa'
 
-export default function MainHero(){
+const MainHero = () =>{
   return(
     <>
       <Hero className="grid section">
@@ -32,3 +34,5 @@ export default function MainHero(){
       </>
   )
 }
+
+export default MainHero

@@ -63,8 +63,7 @@ export const InfoBar = styled.div`
     }
   }
 
-  @media(max-width:375px){
+  @media(max-width:1000px){
     display:none;
   }
-  
 `

@@ -1,9 +1,9 @@
 import React, { useContext, useState, useEffect } from 'react'
-import {Container, BackDrop} from './styles.js'
 import DrawerContext from './context'
 import { MdClose } from 'react-icons/md'
+import { Container, BackDrop } from './styles'
 
-export default function Drawer(){
+const Drawer = () =>{
   const [onTop, setOnTop] = useState(true);
   const {drawer, hidden, setDrawer, setHidden} = useContext(DrawerContext)
 
@@ -15,13 +15,14 @@ export default function Drawer(){
         }
     })
   },[onTop])
+
   return(
     <>
       <Container drawer={!drawer} className={ onTop ? 'mainNavTop' : 'mainNavSticky'}>
-        {
+        {/* {
           // Check if Drawer is open and prevent body to scroll 
           !drawer ? window.onscroll = function () { window.scrollTo(window.scrollY, 0); } : window.onscroll = function () { return } 
-        }
+        } */}
         <div>
           <h4>
             Menu
@@ -42,3 +43,5 @@ export default function Drawer(){
     </>
   )
 }
+
+export default Drawer;

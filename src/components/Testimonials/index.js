@@ -1,7 +1,8 @@
 import React from 'react'
 import Carousel from 'nuka-carousel'
+import Truncate from 'react-truncate'
 // Styled Components
-import { Container, Box, Title, TestimonialContainer } from './styles.js'
+import { Container, Box, TestimonialContainer, Title } from './styles'
 
 // Icons
 import {
@@ -10,18 +11,23 @@ import {
 
 // Images
 import client from '../../assets/img/client.png'
+import clientA from '../../assets/img/client2.png'
 
-export default function Testimonials(){
+
+
+const Testimonials = () =>{
   const carouselSettings = {
     autoplay: true,
-    width: "80%",
+    width: "100%",
     pauseOnHover: false,
     swiping: false,
     withoutControls: true,
     wrapAround: true,
+    slidesToShow: 1,
+    transitionMode: "scroll",
   }
   return (
-    <Container className="grid section-xl">
+    <Container className="section-xl">
       <Box className="grid">
         <Title>
           <h3>That's Why Our Clients Approve Our Work!</h3>
@@ -41,11 +47,13 @@ export default function Testimonials(){
           <TestimonialContainer>
             <div>
               <FaQuoteLeft size={30} />
-              <blockquote>Maecenas sed diam eget risus varius blandit sit amet non magna. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec ullamcorper nulla non metus auctor fringilla.</blockquote>
+              <Truncate lines={3} width={600} className="truncate">
+                <blockquote>Team Bravo did an excelent work at my front porch. They changed all the rotten wood and repainted the whole thing. I couldn't be happier.</blockquote>
+              </Truncate>
               <strong>Joe Doe</strong>
             </div>
             <figure>
-              <img src={client} alt=""/>
+              <img src={clientA} alt=""/>
             </figure>
           </TestimonialContainer>
         </Carousel>
@@ -53,3 +61,5 @@ export default function Testimonials(){
     </Container>
   )
 }
+
+export default Testimonials

@@ -2,11 +2,13 @@ import React, { useContext, useState, useEffect } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import Logo from '../../assets/img/logo.svg'
 import DrawerContext from '../Drawer/context'
-
-import { Container , ToggleButton, RequestButton} from './styles.js'
 import { MdMenu } from 'react-icons/md'
 
-export default function Header(){
+// Styled Components
+import { Container, RequestButton, ToggleButton } from './styles'
+
+
+const Header = () =>{
     const [onTop, setOnTop] = useState(true);
     const {drawer, hidden, setDrawer, setHidden} = useContext(DrawerContext)
 
@@ -51,3 +53,5 @@ export default function Header(){
         </Container>
     )
 }
+
+export default Header
