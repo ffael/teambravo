@@ -4,9 +4,9 @@ import { Link } from 'gatsby'
 
 // Images
 import room from '../../assets/img/room.jpg'
-// import cabinet from '../assets/img/cabinet.jpg'
-// import paint from '../assets/img/pant.jpg'
-// import general from '../assets/img/general.jpg'
+import cabinet from '../../assets/img/cabinet.jpg'
+import paint from '../../assets/img/pant.jpg'
+import general from '../../assets/img/general.jpg'
 
 // Icons
 import { 
@@ -19,12 +19,8 @@ import {
 const Gallery = () =>{
   return (
     <>
-      <Container className="section-xl">
-        <Content primary className="grid">
-          <article>
-            <h3>Latest Projects</h3>
-            <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Vestibulum id ligula porta felis euismod semper. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Donec id elit non mi porta gravida at eget metus.</p>
-          </article>
+      <Container>
+        <Content>
           <div>
             <Link to="" className="backdrop">
               <FaHammer color={"#fff"} size={40}/>
@@ -34,6 +30,70 @@ const Gallery = () =>{
               <img src={room} />
             </figure>
           </div>
+          <div>
+            <Link to="" className="backdrop">
+              <FaScrewdriver color={"#fff"} size={40}/>
+              <h4>Cabinet Install</h4>
+            </Link>
+            <figure className="figure">
+              <img src={cabinet} />
+            </figure>
+          </div>
+          <div>
+            <Link to="" className="backdrop">
+              <FaPaintRoller color={"#fff"} size={40}/>
+              <h4>Finish Painting</h4>
+            </Link>
+            <figure className="figure">
+              <img src={paint} />
+            </figure>
+          </div>
+          <div>
+            <Link to="" className="backdrop">
+              <FaToolbox color={"#fff"} size={40}/>
+              <h4>General Carpentry</h4>
+            </Link>
+            <figure className="figure">
+              <img src={general} />
+            </figure>
+          </div>
+          <div>
+            <Link to="" className="backdrop">
+              <FaScrewdriver color={"#fff"} size={40}/>
+              <h4>Cabinet Install</h4>
+            </Link>
+            <figure className="figure">
+              <img src={cabinet} />
+            </figure>
+          </div>
+          <div>
+            <Link to="" className="backdrop">
+              <FaHammer color={"#fff"} size={40}/>
+              <h4>Finish Carpentry</h4>
+            </Link>
+            <figure className="figure">
+              <img src={room} />
+            </figure>
+          </div>
+          <div>
+            <Link to="" className="backdrop">
+              <FaToolbox color={"#fff"} size={40}/>
+              <h4>General Carpentry</h4>
+            </Link>
+            <figure className="figure">
+              <img src={general} />
+            </figure>
+          </div>
+          <div>
+            <Link to="" className="backdrop">
+              <FaPaintRoller color={"#fff"} size={40}/>
+              <h4>Finish Painting</h4>
+            </Link>
+            <figure className="figure">
+              <img src={paint} />
+            </figure>
+          </div>
+          
         </Content>
       </Container>
     </>

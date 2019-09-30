@@ -1,10 +1,13 @@
 import React from "react"
+import { graphql, useStaticQuery, Link } from 'gatsby'
+
 // Components
 import Layout from "../components/Layouts/"
 import Head from "../components/Layouts/head.js"
 import MainHero from "../components/Hero/"
 import Testimonials from '../components/Testimonials'
 import Gallery from '../components/Gallery'
+import Footer from '../components/Footer'
 // Images
 import room from '../assets/img/room.jpg'
 import cabinet from '../assets/img/cabinet.jpg'
@@ -23,6 +26,25 @@ import {
 } from 'react-icons/fa'
 
 const IndexPage = () => {
+  const data = useStaticQuery(graphql`
+    query{
+      allMarkdownRemark{
+        edges{
+          node{
+            frontmatter{
+              title
+              description
+              image_path
+              image_alt
+            }
+            fields{
+              slug
+            }
+          }
+        }
+      }
+    }
+  `)
   return (
     <Layout>
       <Head title="Home" />
@@ -33,7 +55,25 @@ const IndexPage = () => {
           <h3>Our Services</h3>
           <p>Bravo Handyman has a complete team of professionals that can handle any project. With years of experience and expertise, you can rest assured that you will get nothing else than a well done job!</p>
         </SectionTitle>
-        <CardContainer>
+        {data.allMarkdownRemark.edges.map((edge, index)=>{
+          return(
+            <CardContainer>
+              <Card reverse={(index%2===0)}>
+                <div>
+                  <header>
+                    <h3>{edge.node.frontmatter.title}</h3>
+                  </header>
+                  <p>{edge.node.frontmatter.description}</p>
+                  <p><Link to={`/services/${edge.node.fields.slug}`}>See More</Link></p>
+                </div>
+                <figure>
+                  <img src={`${edge.node.frontmatter.image_path}.jpg`} alt={edge.node.frontmatter.image_alt}/>
+                </figure>
+              </Card>
+            </CardContainer>
+          )
+        })}
+        {/* <CardContainer>
           <Card>
             <div>
               <header>
@@ -88,12 +128,13 @@ const IndexPage = () => {
               <img src={general} alt="Brand New Room"/>
             </figure>
           </Card>
-        </CardContainer>
+        </CardContainer> */}
 
       </Services>
 
       <Testimonials />
       <Gallery />
+      <Footer />
     </Layout>
   )
 }

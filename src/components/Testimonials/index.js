@@ -19,7 +19,7 @@ const Testimonials = () =>{
   const carouselSettings = {
     autoplay: true,
     width: "100%",
-    pauseOnHover: false,
+    pauseOnHover: true,
     swiping: false,
     withoutControls: true,
     wrapAround: true,

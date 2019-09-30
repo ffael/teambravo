@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery, Link } from 'gatsby'
 import Logo from '../../assets/img/logo.svg'
 import DrawerContext from '../Drawer/context'
 import { MdMenu } from 'react-icons/md'
@@ -36,10 +36,10 @@ const Header = () =>{
                 <nav>
                     <h1><a href='index.html'><img src={Logo} alt={data.site.siteMetadata.title}></img></a></h1>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="index.html">Services</a></li>
-                        <li><a href="index.html">About</a></li>
-                        <li><a href="index.html">Contact</a></li>
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/services/">Services</Link></li>
+                        <li><Link to="/about/">About</Link></li>
+                        <li><Link to="/contact/">Contact</Link></li>                        
                     </ul>
 
                     <RequestButton href="index.html">

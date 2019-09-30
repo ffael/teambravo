@@ -55,13 +55,9 @@ export const Container = styled.header`
       justify-content: space-between;
       h1{
         margin-right:0;
-        a{
-          display:flex;
-          align-items: center;
-          height: 100%;
-        }
         img{
-          height: 75%;
+          height: 80%;
+          margin-top: 10px;
           margin-bottom: 0;
         }
       }
@@ -82,7 +78,7 @@ export const ToggleButton = styled.button`
   align-items: center;
   padding: 0;
 
-  @media (min-width: 1090px){
+  @media (min-width: 1091px){
     display: none;
   }
 `

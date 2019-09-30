@@ -1,3 +1,4 @@
+import React from 'react'
 import styled from 'styled-components'
 
 export const Services = styled.section`
@@ -90,3 +91,8 @@ export const Card = styled.article`
     }
   }
 `
+
+export default () => (
+    <>
+    </>
+)

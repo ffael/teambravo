@@ -15,8 +15,6 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-sass',
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-styled-components',
@@ -24,5 +22,13 @@ module.exports = {
         displayName: true
       }
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'src',
+        path: `${__dirname}/src/`
+      }
+    },
+    'gatsby-transformer-remark',
   ]
 }

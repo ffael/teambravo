@@ -24,7 +24,7 @@ export const Hero = styled.section`
   }
 `
 
-export const InfoBar = styled.div`
+export const InfoBar = styled.section`
   background: #BD292A;
   color: #570A0A;
   display: flex;
