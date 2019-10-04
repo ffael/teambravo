@@ -8,24 +8,42 @@ import MainHero from "../components/Hero/"
 import Testimonials from '../components/Testimonials'
 import Gallery from '../components/Gallery'
 import Footer from '../components/Footer'
-// Images
-import room from '../assets/img/room.jpg'
-import cabinet from '../assets/img/cabinet.jpg'
-import paint from '../assets/img/pant.jpg'
-import general from '../assets/img/general.jpg'
 
 // Styled Components
 import { Card, CardContainer, SectionTitle, Services } from './styles'
 
 // Icons
-import { 
-  FaHammer,
-  FaPaintRoller,
-  FaScrewdriver,
-  FaToolbox,
-} from 'react-icons/fa'
+// import { 
+//   FaHammer,
+//   FaPaintRoller,
+//   FaScrewdriver,
+//   FaToolbox,
+// } from 'react-icons/fa'
 
 const IndexPage = () => {
+  const image = useStaticQuery(graphql`
+    query{
+      allFile(filter:{
+        ext:{
+          eq:".jpg"
+        }
+      }){
+        edges{
+          node{
+            name
+            childImageSharp{
+              fixed{
+                src
+              }
+              fluid{
+                src
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
   const data = useStaticQuery(graphql`
     query{
       allMarkdownRemark{
@@ -34,8 +52,7 @@ const IndexPage = () => {
             frontmatter{
               title
               description
-              image_path
-              image_alt
+              name
             }
             fields{
               slug
@@ -67,7 +84,16 @@ const IndexPage = () => {
                   <p><Link to={`/services/${edge.node.fields.slug}`}>See More</Link></p>
                 </div>
                 <figure>
-                  {/* <img src={`${edge.node.frontmatter}.jpg`} alt={edge.node.frontmatter.image_alt}/> */}
+                  {image.allFile.edges.map((image, index)=>{
+                      if(image.node.name === edge.node.frontmatter.name){
+                        return(
+                          <img key={ index }src={image.node.childImageSharp.fluid.src} alt={edge.node.frontmatter.description}/>
+                        )
+                      }else{
+                        return
+                      }
+                    }
+                  )}
                 </figure>
               </Card>
             </CardContainer>

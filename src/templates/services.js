@@ -1,7 +1,8 @@
 import React from 'react'
 import Layout from '../components/Layouts/index'
 import Head from "../components/Layouts/head.js"
-import Hero from '../components/Hero'
+import Hero from '../components/Hero-Page'
+import { Container } from './styles'
 import Testimonials from '../components/Testimonials'
 import Footer from '../components/Footer'
 
@@ -25,8 +26,10 @@ const Services = (props) =>{
   return(
     <Layout>
       <Head title={props.data.markdownRemark.frontmatter.title}/>
-      <Hero />
-      <div className="grid section-xl" dangerouslySetInnerHTML={{__html:props.data.markdownRemark.html}} />
+      <Hero title={props.data.markdownRemark.frontmatter.title} />
+      <Container className="grid section-xl">
+        <div dangerouslySetInnerHTML={{__html:props.data.markdownRemark.html}} />
+      </Container>
       <Testimonials />
       <Footer />
     </Layout>
