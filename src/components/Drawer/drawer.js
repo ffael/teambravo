@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from 'react'
 import DrawerContext from './context'
 import { MdClose } from 'react-icons/md'
 import { Container, BackDrop } from './styles'
+import Menu from '../Menu'
 
 const Drawer = () =>{
   const [onTop, setOnTop] = useState(true);
@@ -32,10 +33,7 @@ const Drawer = () =>{
           </button>
         </div>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="index.html">Services</a></li>
-          <li><a href="index.html">About</a></li>
-          <li><a href="index.html">Contact</a></li>
+          <Menu/>
         </ul>
         
       </Container>

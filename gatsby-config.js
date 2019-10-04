@@ -11,7 +11,25 @@ module.exports = {
     developer: {
       name: 'Tribeweb.io',
       url: 'https://www.tribeweb.io',
-    }
+    },
+    menu: [
+      { 
+        name: 'Home',
+        url: '/'
+      },
+      { 
+        name: 'Services',
+        url: '/services'
+      },
+      { 
+        name: 'About',
+        url: '/about'
+      },
+      { 
+        name: 'Contact',
+        url: '/contact'
+      },
+    ],
   },
   plugins: [
     'gatsby-plugin-sass',

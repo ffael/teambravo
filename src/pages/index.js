@@ -67,7 +67,7 @@ const IndexPage = () => {
                   <p><Link to={`/services/${edge.node.fields.slug}`}>See More</Link></p>
                 </div>
                 <figure>
-                  <img src={`${edge.node.frontmatter.image_path}.jpg`} alt={edge.node.frontmatter.image_alt}/>
+                  {/* <img src={`${edge.node.frontmatter}.jpg`} alt={edge.node.frontmatter.image_alt}/> */}
                 </figure>
               </Card>
             </CardContainer>
