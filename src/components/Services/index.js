@@ -1,11 +1,24 @@
 import React from 'react'
 import { Container, SectionTitle, CardContainer, Card } from './styles'
-import { graphql, useStaticQuery, Link } from 'gatsby'
+import { graphql, Link, useStaticQuery } from 'gatsby'
 
 const Services = () =>{
-
-  const image = useStaticQuery(graphql`
-    query{
+  const data = useStaticQuery(graphql`
+    query Data{
+      allMarkdownRemark{
+        edges{
+          node{
+            frontmatter{
+              title
+              description
+              name
+            }
+            fields{
+              slug
+            }
+          }
+        }
+      }
       allFile(filter:{
         ext:{
           eq:".jpg"
@@ -25,25 +38,7 @@ const Services = () =>{
           }
         }
       }
-    }
-  `)
-  const data = useStaticQuery(graphql`
-    query{
-      allMarkdownRemark{
-        edges{
-          node{
-            frontmatter{
-              title
-              description
-              name
-            }
-            fields{
-              slug
-            }
-          }
-        }
-      }
-    }
+    },
   `)
 
   return(
@@ -52,6 +47,7 @@ const Services = () =>{
           <h3>Our Services</h3>
           <p>Bravo Handyman has a complete team of professionals that can handle any project. With years of experience and expertise, you can rest assured that you will get nothing else than a well done job!</p>
         </SectionTitle>
+        {console.log(data)}
         {data.allMarkdownRemark.edges.map((edge, index)=>{
           return(
             <CardContainer>
@@ -64,7 +60,7 @@ const Services = () =>{
                   <p><Link to={`/services/${edge.node.fields.slug}`}>See More</Link></p>
                 </div>
                 <figure>
-                  {image.allFile.edges.map((image, index)=>{
+                  {data.allFile.edges.map((image, index)=>{
                       if(image.node.name === edge.node.frontmatter.name){
                         return(
                           <img key={ index }src={image.node.childImageSharp.fluid.src} alt={edge.node.frontmatter.description}/>
