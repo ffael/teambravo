@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export const Services = styled.section`
+export const Container = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,8 +31,8 @@ export const SectionTitle = styled.div`
 export const CardContainer = styled.div`
   display: flex;
   align-items: center;
-  padding-left: 10%;
-  padding-right: 10%;
+  padding-left: 2%;
+  padding-right: 2%;
   margin-bottom: 50px;
 
   &:last-child{
@@ -63,7 +63,21 @@ export const Card = styled.article`
         margin-right: 20px;
       }
     }
-
+    a{
+      display: inline-block;
+      background: #323852;
+      color: #fff;
+      padding: 5px 20px;
+      font-size: 0.777rem;
+      font-weight: bold;
+      text-transform: lowercase;
+      transition: all 0.3s ease;
+      &:hover{
+        box-shadow: 0 2px 2px 0px rgba(0,0,0,0.3);
+        transform: translateY(2px);
+        text-decoration: none;
+      }
+    }
     p{
       font-size: 1rem;
       color: #ABAEBE;
@@ -74,6 +88,11 @@ export const Card = styled.article`
     width: 50%;
     margin-bottom: 0;
     box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    &:hover{
+      box-shadow: 0 2px 2px 0px rgba(0,0,0,0.3);
+      transform: translateY(5px);
+    }
     img{
       margin-bottom: 0;
     }
