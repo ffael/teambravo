@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { graphql, useStaticQuery, Link } from 'gatsby'
-import Logo from '../../assets/img/logo.svg'
+import Logo from '../../assets/img/logo.png'
 import DrawerContext from '../Drawer/context'
 import { MdMenu } from 'react-icons/md'
 

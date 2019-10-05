@@ -17,20 +17,20 @@ module.exports.onCreateNode = ({node, actions}) => {
 
 module.exports.createPages = async ({graphql, actions}) => {
   const { createPage } = actions
-  const servicePath = path.resolve(`src/templates/services.js`)
+  const servicePath = path.resolve(`src/templates/page.js`)
 
   const response = await graphql(`
-  query{
-    allMarkdownRemark{
-      edges{
-        node{
-          fields{
-            slug
+    query{
+      allMarkdownRemark{
+        edges{
+          node{
+            fields{
+              slug
+            }
           }
         }
       }
     }
-  }
   `)
   response.data.allMarkdownRemark.edges.forEach((edge)=>{
       createPage({

@@ -15,6 +15,9 @@ export const Container = styled.section`
   div{
     padding: 0 20px;
   }
+  @media (max-width: 1090px){
+    flex-direction: column;
+  }
 `
 export const About = styled.div`
   display: flex;
@@ -24,6 +27,10 @@ export const About = styled.div`
     font-size: 0.888rem;
     line-height: 1.5rem;
   }
+  @media (max-width: 1090px){
+    width: 100%;
+    margin-bottom: 30px;
+  }
 `
 
 export const Info = styled.div`
@@ -32,9 +39,13 @@ export const Info = styled.div`
   ul{
     display: flex;
     flex-direction: column;
+    margin: 0;
     li{
       display:flex;
       margin-bottom: 20px;
+      &:last-child{
+        margin-bottom: 0;
+      }
       a{
         text-decoration: none;
         color: #fff;

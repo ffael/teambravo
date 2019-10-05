@@ -12,10 +12,10 @@ export const Hero = styled.section`
   background-size: 100% 100%;
 
   div{
-    max-width: 500px;
+    max-width: 700px;
     justify-self: left;
     h1{
-      font-size: 50px;
+      font-size: 4rem;
     }
   }
 

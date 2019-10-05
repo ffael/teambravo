@@ -21,8 +21,7 @@ export const query = graphql`
     }
   `
 
-const Services = (props) =>{
-
+const Page = (props) =>{
   return(
     <Layout>
       <Head title={props.data.markdownRemark.frontmatter.title}/>
@@ -36,4 +35,4 @@ const Services = (props) =>{
   )
 }
 
-export default Services
+export default Page

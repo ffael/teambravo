@@ -51,8 +51,9 @@ export const Card = styled.article`
   justify-content: space-between;
   flex-flow: ${props => props.reverse ? 'row' : 'row-reverse'};
 
-  div{
-    width: 45%;
+  .content{
+    margin-right: ${props => props.reverse ? "20px" : 0 };
+    margin-left: ${props => props.reverse ? 0 : "20px" };
     header{
       color: ${props=>props.theme.fonts.heading};
       font-size: 30px;
@@ -85,7 +86,7 @@ export const Card = styled.article`
   }
 
   figure{
-    width: 50%;
+    width: 100%;
     margin-bottom: 0;
     box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
@@ -95,6 +96,9 @@ export const Card = styled.article`
     }
     img{
       margin-bottom: 0;
+    }
+    .imgSharp{
+      width: 100%;
     }
   }
 
