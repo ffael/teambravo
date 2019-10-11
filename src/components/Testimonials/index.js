@@ -4,24 +4,52 @@ import Truncate from 'react-truncate'
 // Styled Components
 import { Container, Box, TestimonialContainer, Title } from './styles'
 
+import { graphql, useStaticQuery } from 'gatsby'
+import Img from 'gatsby-image'
+
 // Icons
 import {
   FaQuoteLeft,
 } from 'react-icons/fa'
 
-// Images
-import client from '../../assets/img/client.png'
-import clientA from '../../assets/img/client2.png'
-
-
-
 const Testimonials = () =>{
+
+  const data = useStaticQuery(graphql`
+    query{
+      allMarkdownRemark(filter:{
+        frontmatter:{
+          type:{
+            eq:"testimonial"
+          }
+        }
+      }){
+        edges{
+          node{
+            html
+            frontmatter{
+              client
+              service
+              city
+              state
+              featuredImage{
+                childImageSharp{
+                  fixed(width:300){
+                    ...GatsbyImageSharpFixed
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
   const carouselSettings = {
     autoplay: true,
     width: "100%",
     pauseOnHover: true,
-    swiping: false,
-    withoutControls: true,
+    swiping: true,
+    withoutControls: false,
     wrapAround: true,
     slidesToShow: 1,
     transitionMode: "scroll",
@@ -34,28 +62,22 @@ const Testimonials = () =>{
           <p>After years providing excelent service, this is what some of our clients have to say: </p>
         </Title>
         <Carousel {...carouselSettings}>
-          <TestimonialContainer>
-            <div>
-              <FaQuoteLeft size={30} />
-              <blockquote>Maecenas sed diam eget risus varius blandit sit amet non magna. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec ullamcorper nulla non metus auctor fringilla.</blockquote>
-              <strong>Mary Doe</strong>
-            </div>
-            <figure>
-              <img src={client} alt=""/>
-            </figure>
-          </TestimonialContainer>
-          <TestimonialContainer>
-            <div>
-              <FaQuoteLeft size={30} />
-              <Truncate lines={3} width={600} className="truncate">
-                <blockquote>Team Bravo did an excelent work at my front porch. They changed all the rotten wood and repainted the whole thing. I couldn't be happier.</blockquote>
-              </Truncate>
-              <strong>Joe Doe</strong>
-            </div>
-            <figure>
-              <img src={clientA} alt=""/>
-            </figure>
-          </TestimonialContainer>
+          {data.allMarkdownRemark.edges.map((edge, index)=>{
+            return(
+              <TestimonialContainer key={index}>
+                <div>
+                  <FaQuoteLeft size={30} />
+                  <Truncate lines={3} width={600} className="truncate">
+                    <blockquote dangerouslySetInnerHTML={{__html:edge.node.html}}></blockquote>
+                  </Truncate>
+                  <strong>{`${edge.node.frontmatter.client} - ${edge.node.frontmatter.city} - ${edge.node.frontmatter.state}`}</strong>
+                </div>
+                <figure>
+                  <Img fixed={edge.node.frontmatter.featuredImage.childImageSharp.fixed} />
+                </figure>
+              </TestimonialContainer>
+            )
+          })}
         </Carousel>
       </Box>
     </Container>

@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from 'react'
 import { graphql, useStaticQuery, Link } from 'gatsby'
 import Logo from '../../assets/img/logo.png'
 import DrawerContext from '../Drawer/context'
+import Menu from '../Menu'
 import { MdMenu } from 'react-icons/md'
 
 // Styled Components
@@ -44,10 +45,7 @@ const Header = () =>{
                     </Link>
                 </h1>
                 <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/services/">Services</Link></li>
-                    <li><Link to="/about/">About</Link></li>
-                    <li><Link to="/contact/">Contact</Link></li>                        
+                    <Menu />                
                 </ul>
 
                 <RequestButton href="https://m.me/bravohandyman" target="_blank">

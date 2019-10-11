@@ -3,11 +3,11 @@
  *
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
-const path = require('path')
 module.exports = {
   /* Your site config here */
   siteMetadata: {
     title: 'Bravo | Handyman',
+    about: 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur blandit tempus porttitor. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.',
     developer: {
       name: 'Tribeweb.io',
       url: 'https://www.tribeweb.io',
@@ -25,10 +25,14 @@ module.exports = {
         name: 'About',
         url: '/about'
       },
-      { 
-        name: 'Contact',
-        url: '/contact'
+      {
+        name: 'Projects',
+        url: '/projects'
       },
+      // { 
+      //   name: 'Contact',
+      //   url: '/contact'
+      // },
     ],
   },
   plugins: [
@@ -48,6 +52,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
+        name: `files`,
         path: `${__dirname}/src/`
       }
     },

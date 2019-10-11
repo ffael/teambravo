@@ -26,6 +26,7 @@ export const Container = styled.header`
 
     h1{
       margin-bottom: 0;
+      max-width: 110px;
 
       img{
         height: 100%;

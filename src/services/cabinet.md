@@ -1,7 +1,7 @@
 ---
 title: "Cabinet Install"
 description: "Maecenas sed diam eget risus varius blandit sit amet non magna. Nulla vitae elit libero, a pharetra augue. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam quis risus eget urna mollis ornare vel eu leo."
-name: "cabinet"
+type: "page"
 featuredImage: "./img/cabinet.jpg"
 ---
 

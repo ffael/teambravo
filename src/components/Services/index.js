@@ -5,14 +5,19 @@ import Img from 'gatsby-image'
 
 const Services = () => {
   const data = useStaticQuery(graphql`
-    query Data{
-      allMarkdownRemark{
+    query{
+      allMarkdownRemark(filter:{
+        frontmatter:{
+          type:{
+            eq: "page"
+          }
+        }
+      }){
         edges{
           node{
             frontmatter{
               title
               description
-              name
               featuredImage{
                 childImageSharp{
                   fluid{

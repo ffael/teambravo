@@ -5,6 +5,13 @@ export default createGlobalStyle`
     
     @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
 
+    .slider-control-centerleft,
+    .slider-control-centerright{
+        display: none !important;
+    }
+    .slider-control-bottomcenter{
+        top: 102% !important;
+    }
     .grid{
         padding-left: calc(5% + 1rem);
         padding-right: calc(5% + 1rem);
