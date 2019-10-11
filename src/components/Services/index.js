@@ -13,6 +13,13 @@ const Services = () => {
               title
               description
               name
+              featuredImage{
+                childImageSharp{
+                  fluid{
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
             }
             fields{
               slug
@@ -20,29 +27,7 @@ const Services = () => {
           }
         }
       }
-      allFile(filter:{
-        relativeDirectory:{
-          eq:"services/img"
-        }
-        ext:{
-          eq:".jpg"
-        }
-      }){
-        edges{
-          node{
-            name
-            childImageSharp{
-              fixed{
-                ...GatsbyImageSharpFixed
-              }
-              fluid{
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-      }
-    },
+    }
   `)
 
   return(
@@ -63,20 +48,9 @@ const Services = () => {
                   <p><Link to={`/services/${edge.node.fields.slug}`}>See More</Link></p>
                 </div>
                 <figure>
-                  {data.allFile.edges.map((image, index)=>{
-                      if(image.node.name === edge.node.frontmatter.name){
-                        return(
-                          <Img key={index} className="imgSharp"
-                            fixed={image.node.childImageSharp.fixed}
-                            fluid={image.node.childImageSharp.fluid}
-                            alt={edge.node.frontmatter.description} />
-                          // <img key={ index }src={image.node.childImageSharp.fluid.src} alt={edge.node.frontmatter.description}/>
-                        )
-                      }else{
-                        return
-                      }
-                    }
-                  )}
+                  <Img key={index} className="imgSharp"
+                    fluid={edge.node.frontmatter.featuredImage.childImageSharp.fluid}
+                    alt={edge.node.frontmatter.description} />
                 </figure>
               </Card>
             </CardContainer>

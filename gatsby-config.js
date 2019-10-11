@@ -48,21 +48,18 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'src',
         path: `${__dirname}/src/`
       }
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'other',
         path: `${__dirname}/src/assets/img`
       }
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'image',
         path: `${__dirname}/src/services/img`
       }
     },

@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+export const FeaturedImg = styled.section`
+  max-height: 500px;
+  overflow: hidden;
+`
 export const Container = styled.section`
   display:flex;
   justify-content: center;

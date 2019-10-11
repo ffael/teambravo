@@ -93,6 +93,13 @@ export const RequestButton = styled.a`
   background: transparent;
   transition: all 0.3s ease;
 
+  span{
+    margin-left: 10px;
+  }
+  &:hover{
+    transform: translateY(2px);
+  }
+
   @media(max-width:1090px){
     display:none;
   }

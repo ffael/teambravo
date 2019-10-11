@@ -6,17 +6,25 @@ import Img from 'gatsby-image'
 const About = () => {
   const data = useStaticQuery(graphql`
     query{
-      file(
-        name:{
-          eq:"team"
-        }){
-        childImageSharp{
-          fixed{
-            src
+      allFile(
+        filter:{
+          relativeDirectory:{
+            eq:"services/img"
           }
-          fluid{
-            src
-            ...GatsbyImageSharpFluid
+          ext:{
+            eq:".jpg"
+          }
+      }){
+        edges{
+          node{
+            childImageSharp{
+              fixed{
+                ...GatsbyImageSharpFixed
+              }
+              fluid{
+                ...GatsbyImageSharpFluid
+              }
+            }
           }
         }
       }
@@ -25,8 +33,12 @@ const About = () => {
 
   return(
     <Container className={"grid section-xl"}>
-      <Img fluid={data.file.childImageSharp.fluid} alt="Hello"/>
-      <img src={data.file.childImageSharp.fluid.src} />
+      {data.allFile.edges.map((image)=>{
+        console.log(image.node.childImageSharp)
+        return(
+          <Img fluid={image.node.childImageSharp.fluid} />
+        )
+      })}
       <SectionTitle>
         <h3>Our Sucess Story</h3>
         <p>Bravo Handyman has a complete team of professionals that can handle any project. With years of experience and expertise, you can rest assured that you will get nothing else than a well done job!</p>

@@ -1,12 +1,7 @@
 import React from 'react'
 // Styled Components
-import { Hero, InfoBar} from './styles'
-
-import {
-  FaTwitterSquare, 
-  FaFacebookSquare, 
-  FaInstagram,
-} from 'react-icons/fa'
+import { Hero } from './styles'
+import InfoBar from '../InfoBar'
 
 const MainHero = () =>{
   return(
@@ -17,20 +12,7 @@ const MainHero = () =>{
             Get to know us!</h1>
           </div>
         </Hero>
-        <InfoBar className="grid">
-          <div>
-            Follow Us:
-            <ul>
-              <li><a href="index.html"><FaInstagram size={20} color={'#570A0A'}/></a></li>
-              <li><a href="index.html"><FaTwitterSquare size={20} color={'#570A0A'}/></a></li>
-              <li><a href="index.html"><FaFacebookSquare size={20} color={'#570A0A'}/></a></li>
-            </ul>
-          </div>
-
-          <div>
-            Give us a Call: <a href="tel:111111111">(978) 596-5350</a>
-          </div>
-        </InfoBar>
+        <InfoBar />
       </>
   )
 }

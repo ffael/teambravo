@@ -33,7 +33,7 @@ const Footer = () =>{
               </div>
               <div>
                 <strong>Phone</strong>
-                <p><a href="tel:111-111-1111">(111) 111-111-1111</a></p>
+                <p><a href="tel:6178705344">(617) 970-5344</a></p>
               </div>
             </li>
             <li>
@@ -42,7 +42,8 @@ const Footer = () =>{
               </div>
               <div>
                 <strong>Address</strong>
-                <p>123 Main Street, Lowell - MA</p>
+                <p>136 Dalton St.
+                Lowell, Massachusetts</p>
               </div>
             </li>
           </ul>
@@ -50,7 +51,7 @@ const Footer = () =>{
       </Container>
       <Copy className="grid">
           <p>2019 - Bravo Handyman - All Rights Reserved ©.</p>
-          <p className="dev">Developed By: <a href="https://www.tribeweb.io" target="_blank">Tribeweb.io</a></p>
+          <p className="dev"><a href="https://www.tribeweb.io" target="_blank">Tribeweb.io</a></p>
       </Copy>
     </>
   )
