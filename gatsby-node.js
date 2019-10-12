@@ -17,7 +17,7 @@ module.exports.onCreateNode = ({node, actions}) => {
 module.exports.createPages = async ({graphql, actions}) => {
   const { createPage } = actions
   const servicePath = path.resolve(`src/templates/page.js`)
-  const projectPath = path.resolve(`src/templates/project.js`)
+  const projectPath = path.resolve(`src/templates/projectDetail.js`)
 
   const res = await graphql(`
     query Project{  
@@ -61,7 +61,7 @@ module.exports.createPages = async ({graphql, actions}) => {
 
   res.data.allMarkdownRemark.edges.forEach((edge)=>{
     createPage({
-      component: servicePath,
+      component: projectPath,
       path: `/projects/${edge.node.fields.slug}`,
       context:{
         slug: edge.node.fields.slug

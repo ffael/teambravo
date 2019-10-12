@@ -3,6 +3,7 @@ client: "John"
 service: "Carpentry"
 city: "Needham"
 state: "MA"
+date: "2019-10-03"
 featuredImage: "./img/cabinet.jpg"
 type: "project"
 ---

@@ -2,7 +2,7 @@ import React from 'react'
 import Layout from '../components/Layouts/index'
 import Head from "../components/Layouts/head.js"
 import Hero from '../components/Hero-Page'
-import { Container, FeaturedImg } from './styles'
+import { Container, FeaturedImg } from './styles/pageStyles'
 import Testimonials from '../components/Testimonials'
 import Footer from '../components/Footer'
 

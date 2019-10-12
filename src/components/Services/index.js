@@ -43,7 +43,7 @@ const Services = () => {
         </SectionTitle>
         {data.allMarkdownRemark.edges.map((edge, index)=>{
           return(
-            <CardContainer>
+            <CardContainer key={index}>
               <Card reverse={(index%2===0)}>
                 <div className="content">
                   <header>
