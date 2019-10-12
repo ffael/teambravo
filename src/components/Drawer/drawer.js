@@ -1,9 +1,10 @@
 import React, { useContext, useState, useEffect } from 'react'
 import DrawerContext from './context'
 import { MdClose } from 'react-icons/md'
-import { Container, BackDrop } from './styles'
+import { Container, BackDrop, RequestButton } from './styles'
 import Menu from '../Menu'
 
+import { FaFacebookMessenger } from 'react-icons/fa'
 const Drawer = () =>{
   const [onTop, setOnTop] = useState(true);
   const {drawer, hidden, setDrawer, setHidden} = useContext(DrawerContext)
@@ -34,6 +35,12 @@ const Drawer = () =>{
         </div>
         <ul>
           <Menu/>
+          <li>
+            <RequestButton href="https://m.me/bravohandyman" target="_blank">
+              <FaFacebookMessenger size={20} color={'#fff'}/> 
+              <span>Request Estimate</span>
+            </RequestButton>
+          </li>
         </ul>
         
       </Container>

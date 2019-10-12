@@ -13,8 +13,9 @@ export const Content = styled.div`
       color: #ABAEBE;
     }
   }
-  header + div{
-    max-height: 200px;
+  p{
+    color: #ABAEBE;
+    font-size: 1.111rem;
   }
 
   @media(max-width:1090px){
@@ -24,14 +25,7 @@ export const Content = styled.div`
 export const Container = styled.section`
   display:flex;
   justify-content: center;
-  margin-bottom: 100px;
-  div{
-    p{
-      color: #ABAEBE;
-      font-size: 1.111rem;
-    }
-  }
-  
+
   @media(max-width:1090px){
     flex-direction: column;
     align-items: center;

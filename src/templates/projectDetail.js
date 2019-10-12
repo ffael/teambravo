@@ -44,6 +44,7 @@ const ProjectDetail = (props) =>{
   const carouselSettings = {
     autoplay: false,
     width: 600,
+    height: 420,
     pauseOnHover: true,
     swiping: true,
     withoutControls: false,

@@ -73,3 +73,26 @@ export const Container = styled.nav`
     width: 75%;
   }
 `
+
+export const RequestButton = styled.a`
+  display: flex;
+  padding: 10px 20px;
+  align-self: center;
+  align-items: center;
+  border: 1px solid #fff;
+  height: 50px;
+  border-radius: 10px;
+  background: transparent;
+  transition: all 0.3s ease;
+
+  span{
+    margin-left: 10px;
+  }
+  &:hover{
+    transform: translateY(2px);
+  }
+
+  @media(max-width:1090px){
+    display:none;
+  }
+`
