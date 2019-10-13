@@ -33,12 +33,12 @@ const About = () => {
 
   return(
     <Container className={"grid section-xl"}>
-      {data.allFile.edges.map((image)=>{
+      {/* {data.allFile.edges.map((image)=>{
         console.log(image.node.childImageSharp)
         return(
           <Img fluid={image.node.childImageSharp.fluid} />
         )
-      })}
+      })} */}
       <SectionTitle>
         <h3>Our Sucess Story</h3>
         <p>Bravo Handyman has a complete team of professionals that can handle any project. With years of experience and expertise, you can rest assured that you will get nothing else than a well done job!</p>
