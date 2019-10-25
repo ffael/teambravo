@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, SectionTitle, CardContainer, Card } from './styles'
+import { Container, CardContainer, Card } from './styles'
 
 import { graphql, useStaticQuery, Link } from 'gatsby'
 import Img from 'gatsby-image'

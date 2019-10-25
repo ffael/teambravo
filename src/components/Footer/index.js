@@ -24,7 +24,7 @@ const Footer = () =>{
               </div>
               <div>
                 <strong>Email</strong>
-                <p><a href="mailto:handyman@teambravo.us">handyman@teambravo.us</a></p>
+                <p><a href="mailto:handyman@teambravo.us" rel="noopener noreferrer">handyman@teambravo.us</a></p>
               </div>
             </li>
             <li>
@@ -33,7 +33,7 @@ const Footer = () =>{
               </div>
               <div>
                 <strong>Phone</strong>
-                <p><a href="tel:6178705344">(617) 970-5344</a></p>
+                <p><a href="tel:6178705344" rel="noopener noreferrer">(617) 970-5344</a></p>
               </div>
             </li>
             <li>
@@ -51,7 +51,7 @@ const Footer = () =>{
       </Container>
       <Copy className="grid">
           <p>2019 - Bravo Handyman - All Rights Reserved ©.</p>
-          <p className="dev"><a href="https://www.tribeweb.io" target="_blank">Tribeweb.io</a></p>
+          <p className="dev"><a href="https://www.tribeweb.io" target="_blank" rel="noopener noreferrer">Tribeweb.io</a></p>
       </Copy>
     </>
   )

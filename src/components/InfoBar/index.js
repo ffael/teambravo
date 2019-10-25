@@ -13,8 +13,8 @@ const InfoBar = () =>{
       <div>
         Follow Us:
         <ul>
-          <li><a href="https://m.me/bravohandyman" target="_blank"><FaFacebookMessenger size={20} color={'#570A0A'}/></a></li>
-          <li><a href="https://www.facebook.com/bravohandyman/" target="_blank"><FaFacebookSquare size={20} color={'#570A0A'}/></a></li>
+          <li><a href="https://m.me/bravohandyman" target="_blank" rel="noopener noreferrer"><FaFacebookMessenger size={20} color={'#570A0A'}/></a></li>
+          <li><a href="https://www.facebook.com/bravohandyman/" target="_blank" rel="noopener noreferrer"><FaFacebookSquare size={20} color={'#570A0A'}/></a></li>
         </ul>
       </div>
 

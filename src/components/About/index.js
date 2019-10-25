@@ -1,35 +1,35 @@
 import React from 'react'
 import { Container, SectionTitle } from './styles'
-import { useStaticQuery, graphql } from 'gatsby'
-import Img from 'gatsby-image'
+// import { useStaticQuery, graphql } from 'gatsby'
+// import Img from 'gatsby-image'
 
 const About = () => {
-  const data = useStaticQuery(graphql`
-    query{
-      allFile(
-        filter:{
-          relativeDirectory:{
-            eq:"services/img"
-          }
-          ext:{
-            eq:".jpg"
-          }
-      }){
-        edges{
-          node{
-            childImageSharp{
-              fixed{
-                ...GatsbyImageSharpFixed
-              }
-              fluid{
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-      }
-    }
-  `)
+  // const data = useStaticQuery(graphql`
+  //   query{
+  //     allFile(
+  //       filter:{
+  //         relativeDirectory:{
+  //           eq:"services/img"
+  //         }
+  //         ext:{
+  //           eq:".jpg"
+  //         }
+  //     }){
+  //       edges{
+  //         node{
+  //           childImageSharp{
+  //             fixed{
+  //               ...GatsbyImageSharpFixed
+  //             }
+  //             fluid{
+  //               ...GatsbyImageSharpFluid
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // `)
 
   return(
     <Container className={"grid section-xl"}>
