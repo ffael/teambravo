@@ -64,6 +64,48 @@ module.exports = {
         start_url: "/",
         background_color: "#fff",
         theme_color: "#570A0A",
+        icons: [
+          {
+            "src": "src/assets/img/favicon-512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+          },
+          {
+            "src": "src/assets/img/favicon-384.png",
+            "type": "image/png",
+            "sizes": "384x384"
+          },
+          {
+            "src": "src/assets/img/favicon-256.png",
+            "type": "image/png",
+            "sizes": "256x256"
+          },
+          {
+            "src": "src/assets/img/favicon-192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+          },
+          {
+            "src": "src/assets/img/favicon-144.png",
+            "type": "image/png",
+            "sizes": "144x144"
+          },
+          {
+            "src": "src/assets/img/favicon-96.png",
+            "type": "image/png",
+            "sizes": "96x96"
+          },
+          {
+            "src": "src/assets/img/favicon-72.png",
+            "type": "image/png",
+            "sizes": "72x72"
+          },
+          {
+            "src": "src/assets/img/favicon-48.png",
+            "type": "image/png",
+            "sizes": "48x48"
+          },
+        ],
         // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
         // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
         display: "standalone",
@@ -89,7 +131,7 @@ module.exports = {
         // Delays sending pageview hits on route update (in milliseconds)
         pageTransitionDelay: 0,
         // Enables Google Optimize using your container Id
-        optimizeId: "UA-114693120-2",
+        optimizeId: "GTM-NLRSPV7",
         // Enables Google Optimize Experiment ID
         experimentId: "UA-114693120-2",
         // Set Variation ID. 0 for original 1,2,3....
@@ -99,6 +141,6 @@ module.exports = {
         siteSpeedSampleRate: 10,
         cookieDomain: "teambravo.com",
     }
-  }
+  ``}
   ]
 }
