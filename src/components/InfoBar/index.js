@@ -1,6 +1,7 @@
 import React from 'react'
 // Styled Components
 import { Container} from './styles'
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
 import {
   FaFacebookSquare, 
@@ -13,8 +14,8 @@ const InfoBar = () =>{
       <div>
         Follow Us:
         <ul>
-          <li><a href="https://m.me/bravohandyman" target="_blank" rel="noopener noreferrer"><FaFacebookMessenger size={20} color={'#570A0A'}/></a></li>
-          <li><a href="https://www.facebook.com/bravohandyman/" target="_blank" rel="noopener noreferrer"><FaFacebookSquare size={20} color={'#570A0A'}/></a></li>
+          <li><OutboundLink href="https://m.me/bravohandyman" target="_blank" rel="noopener noreferrer"><FaFacebookMessenger size={20} color={'#570A0A'}/></OutboundLink></li>
+          <li><OutboundLink href="https://www.facebook.com/bravohandyman/" target="_blank" rel="noopener noreferrer"><FaFacebookSquare size={20} color={'#570A0A'}/></OutboundLink></li>
         </ul>
       </div>
 
