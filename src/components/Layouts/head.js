@@ -19,7 +19,7 @@ const Head = ({title}) =>{
             <meta property="fb:app_id" content="394160471533518" />
             <meta property="og:type" content="website" />
             <meta property="og:url" content="https://test.teambravo.us" />
-            <meta property="og:title" content={data.site.siteMetadata.title} />
+            <meta property="og:title" content={`${title} | ${data.site.siteMetadata.title}`} />
             <meta property="og:image" content={'../assets/img/background.png'} />
             <meta property="og:description" content="Compre celulares, televisores, games, tablets, móveis, eletrodomésticos e muito mais aqui na Gazinshop.com.br, tudo em até 12x s/ juros. Aproveite!" />
             <meta property="og:site_name" content="gazin.com.br" />
