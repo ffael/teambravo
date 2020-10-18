@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 
 export const Container = styled.section`
@@ -14,21 +13,18 @@ export const SectionTitle = styled.div`
   margin-bottom: 70px;
   h3{
     color:#323852;
-    font-size: 1.888rem; 
+    font-size: 3rem; 
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 50px;
   }
   p{
     color: #ABAEBE;
-    font-size: 1.111rem;
+    font-size: 1.2rem;
+    line-height: 2.5rem;
+
   }
 
   @media (max-width: 1090px){
     width: 100%;
   }
 `
-
-export default () => (
-    <>
-    </>
-)

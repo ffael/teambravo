@@ -1,4 +1,5 @@
 import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
 import { Container, About, Info, Copy } from './styles'
 import {
   FaMap,
@@ -7,12 +8,22 @@ import {
 } from 'react-icons/fa'
 
 const Footer = () =>{
+  const { contentfulAbout } = useStaticQuery(graphql`
+    query{
+      contentfulAbout{
+        title
+        description{
+          description
+        }
+      }
+    }
+  `)
   return(
     <>
       <Container className={"grid section-xl"}>
         <About>
           <h4>About Us</h4>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet assumenda, expedita voluptatem porro beatae quo commodi officia pariatur itaque esse nisi hic adipisci veniam eligendi optio qui amet voluptatum animi.</p>
+          <p>{contentfulAbout.description.description}</p>
         </About>
 
         <Info>
@@ -50,8 +61,8 @@ const Footer = () =>{
         </Info>
       </Container>
       <Copy className="grid">
-          <p>2019 - Bravo Handyman - All Rights Reserved ©.</p>
-          <p className="dev"><a href="https://www.tribeweb.io" target="_blank" rel="noopener noreferrer">Tribeweb.io</a></p>
+          <p>2020 - Bravo Handyman - All Rights Reserved ©.</p>
+          {/* <p className="dev"><a href="https://www.tribeweb.io" target="_blank" rel="noopener noreferrer">Tribeweb.io</a></p> */}
       </Copy>
     </>
   )

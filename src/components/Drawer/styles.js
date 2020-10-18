@@ -3,13 +3,17 @@ import styled from 'styled-components'
 export const BackDrop = styled.div`
   position: absolute;
   width: 100vw;
-  height: 5000px;
+  height: 100vh;
   background: rgba(0,0,0,0.5);
   z-index: 10;
-  left: ${props => props.item ? '-100%' : '0'};
+  left: -150%;
 
   &:hover{
     cursor: pointer;
+  }
+
+  @media (max-width: 1090px){
+    left: ${props => props.item ? '-120%' : '0'};
   }
 `
 export const Container = styled.nav`

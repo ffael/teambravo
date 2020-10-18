@@ -14,9 +14,9 @@ export const SectionTitle = styled.div`
   margin-bottom: 70px;
   h3{
     color:#323852;
-    font-size: 1.888rem; 
+    font-size: 3rem; 
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 50px;
   }
   p{
     color: #ABAEBE;
@@ -30,6 +30,7 @@ export const SectionTitle = styled.div`
 
 export const CardContainer = styled.div`
   display: flex;
+  width: 100% !important;
   align-items: center;
   padding-left: 2%;
   padding-right: 2%;
@@ -46,6 +47,7 @@ export const CardContainer = styled.div`
 `
 export const Card = styled.article`
   display: flex;
+  width: 100% !important;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
@@ -54,6 +56,7 @@ export const Card = styled.article`
   .content{
     margin-right: ${props => props.reverse ? "20px" : 0 };
     margin-left: ${props => props.reverse ? 0 : "20px" };
+    width: 100% !important;
     header{
       color: ${props=>props.theme.fonts.heading};
       font-size: 30px;
@@ -86,7 +89,7 @@ export const Card = styled.article`
   }
 
   figure{
-    width: 100%;
+    width: 60% !important;
     margin-bottom: 0;
     box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
@@ -109,7 +112,7 @@ export const Card = styled.article`
       width: 100%;
     }
     figure{
-      width: 100%;
+      width: 100% !important;
       margin-bottom: 20px;
     }
   }
