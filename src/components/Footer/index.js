@@ -8,12 +8,17 @@ import {
 } from 'react-icons/fa'
 
 const Footer = () =>{
-  const { contentfulAbout } = useStaticQuery(graphql`
+  const { contentfulAbout, site } = useStaticQuery(graphql`
     query{
       contentfulAbout{
         title
         description{
           description
+        }
+      }
+      site{
+        siteMetadata{
+          email
         }
       }
     }
@@ -35,7 +40,7 @@ const Footer = () =>{
               </div>
               <div>
                 <strong>Email</strong>
-                <p><a href="mailto:handyman@teambravo.us" rel="noopener noreferrer">handyman@teambravo.us</a></p>
+                <p><a href={`mailto:${site.siteMetadata.email}`} rel="noopener noreferrer">{site.siteMetadata.email}</a></p>
               </div>
             </li>
             <li>
