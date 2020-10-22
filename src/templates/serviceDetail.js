@@ -3,7 +3,6 @@ import Layout from "../components/Layouts/index"
 import Head from "../components/Layouts/head.js"
 import Hero from "../components/Hero-Page"
 import { Container, FeaturedImg } from "./styles/pageStyles"
-import Testimonials from "../components/Testimonials"
 import Footer from "../components/Footer"
 
 import { graphql } from "gatsby"
@@ -39,7 +38,6 @@ export default function ServiceDetail(props) {
           <p>{props.data.contentfulServices.description.description}</p>
         </div>
       </Container>
-      <Testimonials />
       <Footer />
     </Layout>
   )
