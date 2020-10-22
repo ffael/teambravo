@@ -90,6 +90,8 @@ export const Card = styled.article`
 
   figure{
     width: 60% !important;
+    max-height: 400px !important;
+    overflow: hidden;
     margin-bottom: 0;
     box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
     transition: all 0.3s ease;

@@ -3,17 +3,17 @@ import { Container, SectionTitle, CardContainer, Card } from "./styles"
 import { graphql, Link, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 
-export default function Services({mainPage}){
+export default function Services({ mainPage }) {
   const { allContentfulServices } = useStaticQuery(graphql`
     query {
-      allContentfulServices{
-        edges{
-          node{
+      allContentfulServices {
+        edges {
+          node {
             title
             brief
             slug
-            featuredImage{
-              fluid(quality: 100, maxHeight:400){
+            featuredImage {
+              fluid(quality: 100, maxHeight: 400) {
                 ...GatsbyContentfulFluid
               }
             }
@@ -34,34 +34,29 @@ export default function Services({mainPage}){
         </p>
       </SectionTitle>
       {allContentfulServices.edges.map((edge, index) => {
-            return (
-              <CardContainer key={index}>
-                <Card reverse={index % 2 === 0}>
-                  <div className="content">
-                    <header>
-                      <h3>{edge.node.title}</h3>
-                    </header>
-                    <p>{edge.node.brief}</p>
-                    <p>
-                      <Link to={`/services/${edge.node.slug}`}>
-                        See More
-                      </Link>
-                    </p>
-                  </div>
-                  <figure>
-                    <Img
-                      key={index}
-                      className="imgSharp"
-                      fluid={
-                        edge.node.featuredImage.fluid
-                      }
-                    />
-                  </figure>
-                </Card>
-              </CardContainer>
-            )
-          })
-        }
+        return (
+          <CardContainer key={index}>
+            <Card reverse={index % 2 === 0}>
+              <div className="content">
+                <header>
+                  <h3>{edge.node.title}</h3>
+                </header>
+                <p>{edge.node.brief}</p>
+                <p>
+                  <Link to={`/services/${edge.node.slug}`}>See More</Link>
+                </p>
+              </div>
+              <figure>
+                <Img
+                  key={index}
+                  className="imgSharp"
+                  fluid={edge.node.featuredImage.fluid}
+                />
+              </figure>
+            </Card>
+          </CardContainer>
+        )
+      })}
     </Container>
   )
 }
