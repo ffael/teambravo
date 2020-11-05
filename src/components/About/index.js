@@ -1,31 +1,35 @@
-import React from 'react'
-import { Container, SectionTitle } from './styles'
-import { useStaticQuery, graphql } from 'gatsby'
+import React from "react"
+import { Container, SectionTitle } from "./styles"
+import { useStaticQuery, graphql } from "gatsby"
 
-export default function About(){
-  const { contentfulAbout } = useStaticQuery(graphql`
-    query{
-      contentfulAbout{
+export default function About({ mainPage }) {
+  const { contentfulAbout, contentfulWhyChooseUs } = useStaticQuery(graphql`
+    query {
+      contentfulAbout {
         title
-        description{
+        description {
+          description
+        }
+      }
+      contentfulWhyChooseUs {
+        title
+        description {
           description
         }
       }
     }
   `)
-  return(
+  return (
     <Container className={"grid section-xl"}>
-      {/* {data.allFile.edges.map((image)=>{
-        console.log(image.node.childImageSharp)
-        return(
-          <Img fluid={image.node.childImageSharp.fluid} />
-        )
-      })} */}
       <SectionTitle>
-        <h3>{contentfulAbout.title}</h3>
-        <p>
-          {contentfulAbout.description.description}
-        </p>
+        {mainPage === true ? (
+          <>
+            <h3>{contentfulWhyChooseUs.title}</h3>
+            <p>{contentfulWhyChooseUs.description.description}</p>
+          </>
+        ) : (
+          <p>{contentfulAbout.description.description}</p>
+        )}
       </SectionTitle>
     </Container>
   )

@@ -4,7 +4,7 @@ import { graphql, Link, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 
 export default function Services({ mainPage }) {
-  const { allContentfulServices } = useStaticQuery(graphql`
+  const { allContentfulServices, contentfulIntroServices } = useStaticQuery(graphql`
     query {
       allContentfulServices {
         edges {
@@ -20,17 +20,21 @@ export default function Services({ mainPage }) {
           }
         }
       }
+      contentfulIntroServices {
+        title
+        description {
+          description
+        }
+      }
     }
   `)
 
   return (
     <Container className={"grid section-xl"}>
       <SectionTitle>
-        <h3>Our Services</h3>
+        <h3>{contentfulIntroServices.title}</h3>
         <p>
-          Bravo Handyman has a complete team of professionals that can handle
-          any project. With years of experience and expertise, you can rest
-          assured that you will get nothing else than a well done job!
+          {contentfulIntroServices.description.description}
         </p>
       </SectionTitle>
       {allContentfulServices.edges.map((edge, index) => {

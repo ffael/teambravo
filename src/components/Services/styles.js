@@ -21,6 +21,7 @@ export const SectionTitle = styled.div`
   p{
     color: #ABAEBE;
     font-size: 1.111rem;
+    line-height: 2.5rem;
   }
 
   @media (max-width: 1090px){
